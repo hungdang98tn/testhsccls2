@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trắc Nghiệm Hồi Sức Cấp Cứu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        -webkit-tap-highlight-color: transparent;
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header cố định trên mobile -->
+    <header class="sticky top-0 z-20 bg-indigo-700 text-white shadow-md">
+        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+            <div>
+                <h1 class="font-bold text-lg leading-tight">Trắc Nghiệm Y Khoa</h1>
+                <p class="text-xs text-indigo-200" id="topic-title">Hồi Sức Cấp Cứu - 72 Câu</p>
+            </div>
+            <button id="btn-grid" onclick="toggleGridModal()" class="bg-indigo-600 hover:bg-indigo-800 text-white px-3 py-1.5 rounded-lg text-sm flex items-center gap-1.5 border border-indigo-500">
+                <i class="fa-solid fa-th"></i>
+                <span id="progress-text">1/72</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Nội dung câu hỏi -->
+    <main class="flex-1 max-w-md w-full mx-auto p-4 pb-24">
+        
+        <!-- Thẻ chứa thông tin Ca lâm sàng / Chủ đề -->
+        <div id="case-box" class="hidden mb-3 bg-amber-50 border-l-4 border-amber-500 p-3 rounded-r-lg shadow-sm text-sm text-amber-900">
+            <div class="font-semibold text-xs text-amber-700 uppercase tracking-wide mb-1" id="case-title">Ca Lâm Sàng</div>
+            <div id="case-content" class="leading-relaxed"></div>
+        </div>
+
+        <!-- Thẻ câu hỏi -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 mb-4">
+            <div class="flex justify-between items-start mb-2">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-full" id="question-number">Câu 1</span>
+            </div>
+            <h2 class="text-base font-semibold text-slate-900 leading-snug mb-4" id="question-text">
+                Nội dung câu hỏi...
+            </h2>
+
+            <!-- Danh sách lựa chọn -->
+            <div class="space-y-2.5" id="options-container">
+                <!-- Javascript sẽ render các tùy chọn A
